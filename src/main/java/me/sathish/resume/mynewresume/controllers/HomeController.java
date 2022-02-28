@@ -1,5 +1,6 @@
 package me.sathish.resume.mynewresume.controllers;
 
+import me.sathish.resume.mynewresume.exceptions.UserNotFoundException;
 import me.sathish.resume.mynewresume.models.ResumeUserEducation;
 import me.sathish.resume.mynewresume.models.ResumeUserJob;
 import me.sathish.resume.mynewresume.models.ResumeUserProfile;
@@ -78,7 +79,7 @@ public class HomeController {
     @GetMapping("/view/{user}")
     public ResumeUserProfile viewUser(@PathVariable String user) {
         Optional<ResumeUserProfile> userProfileOptional = userProfileRepository.findByUserName(user);
-        userProfileOptional.orElseThrow(() -> new RuntimeException("User Not Found"));
+        userProfileOptional.orElseThrow(() -> new UserNotFoundException("User Not Found"));
         userProfileOptional.get().getUserName();
         return userProfileOptional.get();
     }
