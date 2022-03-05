@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -17,11 +16,9 @@
     <properties>
         <java.version>11</java.version>
         <assertj.version>3.17.1</assertj.version>
-
         <spring-boot.version>2.6.0</spring-boot.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
         <chaos-monkey-spring-boot.version>2.3.10</chaos-monkey-spring-boot.version>
-
         <docker.image.prefix>springcommunity</docker.image.prefix>
         <docker.image.exposed.port>9090</docker.image.exposed.port>
         <docker.image.dockerfile.dir>${basedir}</docker.image.dockerfile.dir>

@@ -1,19 +1,30 @@
-
 spring:
+  datasource:
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    hikari:
+      jdbc-url: jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1
+      username: sa
+      password:
   jpa:
     show-sql: true
+    generate-ddl: true
     defer-datasource-initialization: true
-  datasource:
-    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+    hibernate:
+      dialect: org.hibernate.dialect.HSQLDialect
+      ddl-auto: create
+  sql:
+    init:
+      mode: never
+      platform: hsqldb
+      continue-on-error: false
   application:
     name: myresumereader-service
   config:
     import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
-  h2:
-    console:
-      enabled: true
-server:
-  port: 8080
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
 ---
 spring:
   config:
