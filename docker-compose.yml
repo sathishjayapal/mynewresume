@@ -4,7 +4,6 @@ version: '2'
     container_name: mynewresumereader-service
     mem_limit: 512M
     depends_on:
-      - config-server
       - discovery-server
     entrypoint: ["./dockerize","-wait=tcp://discovery-server:8761","-timeout=60s","--","java", "org.springframework.boot.loader.JarLauncher"]
     ports:
@@ -13,8 +12,6 @@ version: '2'
     image: myresume/my-new-resume-discovery-server
     container_name: discovery-server
     mem_limit: 512M
-    depends_on:
-      - config-server
     entrypoint: [ "./dockerize","-wait=tcp://config-server:8888","-timeout=60s","--","java", "org.springframework.boot.loader.JarLauncher" ]
     ports:
       - 8761:8761
