@@ -27,6 +27,7 @@
     </properties>
     <modules>
         <module>mynewresumereaderservice</module>
+        <module>mynewresume-config-server</module>
         <module>mynewresume-discovery-server</module>
     </modules>
     <dependencyManagement>
@@ -108,6 +109,7 @@
                 </plugins>
             </build>
         </profile>
+
         <profile>
             <id>buildDocker</id>
             <build>
