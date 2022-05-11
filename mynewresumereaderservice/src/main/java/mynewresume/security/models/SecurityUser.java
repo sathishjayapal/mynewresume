@@ -1,4 +1,4 @@
-package mynewresume.models;
+package mynewresume.security.models;
 
 import javax.persistence.*;
 

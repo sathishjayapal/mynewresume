@@ -1,6 +1,6 @@
-package mynewresume.repos;
+package mynewresume.resume.repos;
 
-import mynewresume.models.ResumeUserProfile;
+import mynewresume.resume.models.ResumeUserProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package mynewresume.models;
+package mynewresume.resume.models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -18,19 +18,6 @@ public class ResumeUserJob {
     private boolean isCurrentJob;
     @ElementCollection(targetClass = String.class)
     private List<String> responsibilities = new ArrayList<>();
-
-    @Override
-    public String toString() {
-        return "ResumeUserJob{" +
-                "id=" + id +
-                ", company='" + company + '\'' +
-                ", designation='" + designation + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", isCurrentJob=" + isCurrentJob +
-                ", responsibilities=" + responsibilities +
-                '}';
-    }
 
     public boolean isCurrentJob() {
         return isCurrentJob;

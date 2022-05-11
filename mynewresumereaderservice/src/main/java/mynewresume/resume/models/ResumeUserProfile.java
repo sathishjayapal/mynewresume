@@ -1,4 +1,4 @@
-package mynewresume.models;
+package mynewresume.resume.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -7,6 +7,14 @@ import java.util.List;
 @Entity
 @Table
 public class ResumeUserProfile {
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "job_id")
+    List<ResumeUserJob> resumeUserJobList = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "resume_user_education_id")
+    List<ResumeUserEducation> resumeUserEducationList = new ArrayList<>();
+    @ElementCollection(targetClass = String.class)
+    List<String> keySkills = new ArrayList<>();
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -17,15 +25,6 @@ public class ResumeUserProfile {
     private String phone;
     private String twitterHandle;
     private String gitHubRepo;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "job_id")
-    List<ResumeUserJob> resumeUserJobList = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "resume_user_education_id")
-    List<ResumeUserEducation> resumeUserEducationList = new ArrayList<>();
-    @ElementCollection(targetClass = String.class)
-    List<String> keySkills = new ArrayList<>();
 
     public List<String> getKeySkills() {
         return keySkills;
@@ -114,20 +113,5 @@ public class ResumeUserProfile {
 
     public void setSummary(String summary) {
         this.summary = summary;
-    }
-
-    @Override
-    public String toString() {
-        return "ResumeUserProfile{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", theme='" + theme + '\'' +
-                ", summary='" + summary + '\'' +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", twitterHandle='" + twitterHandle + '\'' +
-                ", gitHubRepo='" + gitHubRepo + '\'' +
-                ", resumeUserJobList=" + resumeUserJobList +
-                '}';
     }
 }

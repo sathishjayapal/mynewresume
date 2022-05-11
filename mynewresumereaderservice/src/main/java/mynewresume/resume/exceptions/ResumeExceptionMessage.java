@@ -1,11 +1,11 @@
-package mynewresume.exceptions;
+package mynewresume.resume.exceptions;
 
 import java.util.Date;
 
 public class ResumeExceptionMessage {
-    private Date timeStamp;
-    private String message;
-    private String details;
+    private final Date timeStamp;
+    private final String message;
+    private final String details;
 
     public ResumeExceptionMessage(Date timeStamp, String message, String details) {
         this.timeStamp = timeStamp;

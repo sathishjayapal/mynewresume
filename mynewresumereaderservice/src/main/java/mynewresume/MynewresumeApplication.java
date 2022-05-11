@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 @EnableDiscoveryClient
 @SpringBootApplication
 public class MynewresumeApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(MynewresumeApplication.class, args);
     }

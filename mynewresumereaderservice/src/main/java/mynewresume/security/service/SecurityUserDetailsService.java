@@ -1,8 +1,8 @@
-package mynewresume.service;
+package mynewresume.security.service;
 
-import mynewresume.models.SecurityUser;
-import mynewresume.models.SecurityUserDetails;
-import mynewresume.repos.UserRepository;
+import mynewresume.security.models.SecurityUser;
+import mynewresume.security.models.SecurityUserDetails;
+import mynewresume.security.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

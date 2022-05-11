@@ -1,4 +1,4 @@
-package mynewresume.dto;
+package mynewresume.resume.dto;
 
 import lombok.Data;
 import lombok.Getter;

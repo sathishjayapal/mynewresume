@@ -1,5 +1,6 @@
-package mynewresume.exceptions;
+package mynewresume.resume.exceptions;
 
+import mynewresume.security.exceptions.UserNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package mynewresume.models;
+package mynewresume.resume.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,18 +16,6 @@ public class ResumeUserEducation {
     private LocalDate startDate;
     private LocalDate endDate;
     private String summary;
-
-    @Override
-    public String toString() {
-        return "ResumeUserEducation{" +
-                "id=" + id +
-                ", college='" + college + '\'' +
-                ", qualification='" + qualification + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", summary='" + summary + '\'' +
-                '}';
-    }
 
     public int getId() {
         return id;

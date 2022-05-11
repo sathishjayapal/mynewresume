@@ -1,4 +1,4 @@
-package mynewresume.config;
+package mynewresume.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -28,7 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/api/**").hasAnyRole("USER")
                 .antMatchers("/edit").authenticated()
                 .antMatchers("/view/**").authenticated()
-                .antMatchers("/h2-console/**").permitAll()
+                .antMatchers("/h2-console").permitAll()
                 .antMatchers("/").permitAll()
                 .and().formLogin();
         http.csrf().disable();
