@@ -1,0 +1,29 @@
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    defer-datasource-initialization: true
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: create
+  sql:
+    init:
+      continue-on-error: false
+      mode: always
+  application:
+    name: myresumereader-dataloader
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://sathishproject-config-server.eastus.azurecontainer.io:8888/}
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:http://sathishproject-config-server.eastus.azurecontainer.io:8888/
+
+
+
