@@ -21,13 +21,8 @@ springdoc:
 eureka:
   client:
     service-url:
-      defaultZone: https://sathishdiscovery-server.eastus.azurecontainer.io
----
-spring:
-  config:
-    activate:
-      on-profile: docker
-    import: configserver:http://sathishdiscovery-server.eastus.azurecontainer.io:8761/
+      defaultZone: http://sathishdiscovery-server.eastus.azurecontainer.io:8761/eureka/
+
 
 
 
