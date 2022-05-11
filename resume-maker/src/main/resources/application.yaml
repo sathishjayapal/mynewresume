@@ -1,0 +1,29 @@
+spring:
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      continue-on-error: false
+      mode: always
+  application:
+    name: myresumemaker-service
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://sathishproject-config-server.eastus.azurecontainer.io:8888/}
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+eureka:
+  client:
+    service-url:
+      defaultZone: http://sathishdiscovery-server.eastus.azurecontainer.io:8761/eureka/
+server:
+  port: 9080
+
+
+
