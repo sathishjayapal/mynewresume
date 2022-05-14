@@ -13,9 +13,3 @@ logging:
         web: INFO
 server:
   port: 8761
----
-spring:
-  config:
-    activate:
-      on-profile: docker
-    import: configserver:http://sathishproject-config-server.eastus.azurecontainer.io:8888/
