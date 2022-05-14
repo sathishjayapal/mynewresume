@@ -1,4 +1,8 @@
+persistenceTarget: postgresql
+envTarget: dev
 spring:
+  profiles:
+    active: prod
   jpa:
     show-sql: true
     defer-datasource-initialization: true

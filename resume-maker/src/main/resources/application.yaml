@@ -1,4 +1,10 @@
+management:
+  endpoint:
+    health:
+      enabled: true
 spring:
+  profiles:
+    active: dev
   jpa:
     show-sql: true
     defer-datasource-initialization: true
@@ -24,6 +30,9 @@ eureka:
       defaultZone: http://sathishdiscovery-server.eastus.azurecontainer.io:8761/eureka/
 server:
   port: 9080
-
-
+logging:
+  level:
+    org.springframework.web: INFO
+persistenceTarget: postgresql
+envTarget: dev
 

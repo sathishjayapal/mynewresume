@@ -1,4 +1,4 @@
-drop table if exists security_user CASCADE
+drop table if exists security_user CASCADE;
 create table security_user
 (
     id        integer not null,
