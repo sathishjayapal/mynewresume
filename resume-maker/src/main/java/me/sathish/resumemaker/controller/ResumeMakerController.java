@@ -21,7 +21,6 @@ public class ResumeMakerController {
         this.wordResumeMakerService = wordResumeMakerService;
         this.restTemplate = restTemplate;
     }
-
     @GetMapping("/")
     public String rootHello() throws IOException {
         HttpHeaders headers = new HttpHeaders();
