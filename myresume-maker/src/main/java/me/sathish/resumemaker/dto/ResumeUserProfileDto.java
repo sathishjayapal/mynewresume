@@ -18,8 +18,10 @@ public class ResumeUserProfileDto {
     private String summary;
     private String name;
     private String phone;
+    private String email;
     private String twitterHandle;
     private String gitHubRepo;
+    private List<String> summarySkills;
     private List<String> keySkills;
     private List<ResumeUserJobDto> resumeUserJobList;
     private List<ResumeUserEducationDto> resumeUserEducationList;

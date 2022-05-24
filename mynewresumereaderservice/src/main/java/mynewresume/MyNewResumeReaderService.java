@@ -8,11 +8,12 @@ import org.springframework.context.annotation.Bean;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class MynewresumeApplication {
+public class MyNewResumeReaderService {
 
     public static void main(String[] args) {
-        SpringApplication.run(MynewresumeApplication.class, args);
+        SpringApplication.run(MyNewResumeReaderService.class, args);
     }
+
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();

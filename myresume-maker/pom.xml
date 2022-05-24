@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>me.sathish</groupId>
-    <artifactId>resume-maker</artifactId>
+    <artifactId>myresume-maker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>resume-maker</name>
-    <description>resume-maker</description>
+    <description>my-resume-maker</description>
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.2</spring-cloud.version>
