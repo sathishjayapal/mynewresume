@@ -22,13 +22,10 @@ import java.io.FileOutputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-
 @Service
 public class WordResumeMakerService {
     public static String resumeFileName = "sathish-resume" + LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE) + ".docx";
-
-
-    private Boolean uploadDocument(FileOutputStream out) {
+    public Boolean uploadDocument(FileOutputStream out) {
         try {
             TokenCredential tokenCredential = new DefaultAzureCredentialBuilder()
                     .authorityHost(AzureAuthorityHosts.AZURE_PUBLIC_CLOUD)

@@ -1,9 +1,15 @@
 package me.sathish.resumemaker.service;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+@ExtendWith(SpringExtension.class)
 class WordResumeMakerServiceTest {
 
+    @Autowired
+    WordResumeMakerService wordResumeMakerService;
 
     @BeforeAll
     public static void beforeClass() {
@@ -28,6 +34,7 @@ class WordResumeMakerServiceTest {
 
     @Test
     void makeResume() {
+        wordResumeMakerService.uploadDocument(null);
         Assertions.assertTrue(1 == 1);
     }
 }

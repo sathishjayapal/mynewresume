@@ -1,5 +1,6 @@
 package me.sathish.resumemaker.controller;
 
+import lombok.RequiredArgsConstructor;
 import me.sathish.resumemaker.dto.ResumeUserProfileDto;
 import me.sathish.resumemaker.service.WordResumeMakerService;
 import me.sathish.resumemaker.util.ResumeFakeDataMaker;
@@ -26,8 +27,16 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class ResumeMakerController implements me.sathish.resumemaker.util.ResumeFakeDataMaker {
     RestTemplate restTemplate;
+
+    private WordResumeMakerService wordResumeMakerService;
+
+    public ResumeMakerController(WordResumeMakerService wordResumeMakerService, RestTemplate restTemplate) {
+        this.wordResumeMakerService = wordResumeMakerService;
+        this.restTemplate = restTemplate;
+    }
 
     @GetMapping("/")
     public String rootHello() throws IOException {
@@ -41,7 +50,7 @@ public class ResumeMakerController implements me.sathish.resumemaker.util.Resume
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAcceptCharset(Arrays.asList(StandardCharsets.UTF_8));
         HttpEntity httpEntity = new HttpEntity(null, headers);
-        ResponseEntity<ResumeUserProfileDto> responseEntity = restTemplate.exchange("http://myresumereader-service/view/foo", HttpMethod.GET, httpEntity, ResumeUserProfileDto.class);
+        ResponseEntity<ResumeUserProfileDto> responseEntity = restTemplate.exchange("http://localhost:8080/view/foo", HttpMethod.GET, httpEntity, ResumeUserProfileDto.class);
         ResumeUserProfileDto output = responseEntity.getBody();
         return output.toString();
     }
@@ -56,9 +65,10 @@ public class ResumeMakerController implements me.sathish.resumemaker.util.Resume
         createSummaryAccomplishmentSection(output, document);
         FileOutputStream out = new FileOutputStream(WordResumeMakerService.resumeFileName);
         document.write(out);
+//        wordResumeMakerService.uploadDocument(out);
         out.close();
         document.close();
-//        uploadDocument(out);
+
     }
 
     private void createSummarySection(XWPFDocument document) {
